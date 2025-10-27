@@ -53,8 +53,8 @@ public class CameraCentralRole : MonoBehaviour
     private void UpdateRotation()
     {
         yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
-        pitch += Input.GetAxis("Mouse Y") * mouseSensitivity;
-        pitch = Mathf.Clamp(pitch, -75, 75);
+        //pitch += Input.GetAxis("Mouse Y") * mouseSensitivity;
+        //pitch = Mathf.Clamp(pitch, -75, 75);
 
         transform.rotation = Quaternion.Euler(-pitch, yaw, 0);
     }

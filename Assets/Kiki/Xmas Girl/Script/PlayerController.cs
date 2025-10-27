@@ -4,10 +4,9 @@ using UnityEngine;
 
 namespace SD
 {
-
     public class PlayerController : MonoBehaviour
     {
-     
+        CameraCentralRole cameraCentralRole;
         [Header("Player Setting")]
         public float turnSpeed = 10f;
         public float runSpeed = 3f;
@@ -31,7 +30,10 @@ namespace SD
         {
             m_Rigidbody = GetComponent<Rigidbody>();
             m_Animator = GetComponent<Animator>();     
-            camTrans = Camera.main.transform;     
+            camTrans = Camera.main.transform;
+
+            cameraCentralRole = GameObject.Find("Camera").GetComponent<CameraCentralRole>();
+            cameraCentralRole?.InitCamera(transform);
         }
       
 
@@ -67,7 +69,10 @@ namespace SD
                 Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_MoveVector, turnSpeed * Time.deltaTime, 0f);
                 m_Rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredForward), turnSpeed);
                 m_Rigidbody.MoveRotation(m_Rotation);
-                m_Rigidbody.MovePosition(m_Rigidbody.position + inputSpeed*m_MoveVector * runSpeed * Time.deltaTime);
+                Vector3 moveDelta = inputSpeed * m_MoveVector * runSpeed * Time.deltaTime;
+                moveDelta.y = 0;
+                m_Rigidbody.MovePosition(m_Rigidbody.position + moveDelta);
+                //m_Rigidbody.MovePosition(m_Rigidbody.position + inputSpeed*m_MoveVector * runSpeed * Time.deltaTime);
             }
 
         }   

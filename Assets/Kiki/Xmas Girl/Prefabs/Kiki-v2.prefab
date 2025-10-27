@@ -492,7 +492,6 @@ GameObject:
   - component: {fileID: 4675961715686533599}
   - component: {fileID: 1265177029828767835}
   - component: {fileID: 1265177029828767837}
-  - component: {fileID: 1265177029828767838}
   m_Layer: 0
   m_Name: Kiki-v2
   m_TagString: Untagged
@@ -588,27 +587,6 @@ CapsuleCollider:
   m_Height: 1.4
   m_Direction: 1
   m_Center: {x: 0, y: 0.7, z: 0}
---- !u!114 &1265177029828767838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112089406245431583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6149a22cf8a47a192a60b00b3becb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blendShapeIndex: 0
-  isActive: 1
-  face: {fileID: 3167520868842152558}
-  ratio_Close: 85
-  ratio_HalfClose: 20
-  ratio_Open: 0
-  timeBlink: 0.4
-  threshold: 0.3
-  interval: 3
 --- !u!1 &2145306343916277106
 GameObject:
   m_ObjectHideFlags: 0
