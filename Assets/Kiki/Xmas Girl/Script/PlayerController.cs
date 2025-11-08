@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SD
 {
@@ -33,7 +31,7 @@ namespace SD
             camTrans = Camera.main.transform;
 
             cameraCentralRole = GameObject.Find("Camera").GetComponent<CameraCentralRole>();
-            cameraCentralRole?.InitCamera(transform);
+            //cameraCentralRole?.InitCamera(transform);
         }
       
 

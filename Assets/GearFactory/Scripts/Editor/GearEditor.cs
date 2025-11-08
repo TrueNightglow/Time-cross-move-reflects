@@ -31,7 +31,7 @@ namespace GearFactory
 
             DrawOptions(targetScript);
         }
-        
+
         private void DrawOptions(GearBase targetScript)
         {
             DrawCommonOptions(targetScript);
@@ -200,6 +200,7 @@ namespace GearFactory
         }
 
         //save entire GameObject
+        [System.Obsolete]
         private void SavePrefabToFile(GearBase gearMesh, string name)
         {
             CheckFolders("Saved prefabs");

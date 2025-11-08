@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
-        cameraCentralRole.InitCamera(transform);
+        //cameraCentralRole.InitCamera(transform);
         transform.position = initPos;
 
         anim.SetBool("Move", ismoving);

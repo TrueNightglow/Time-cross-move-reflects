@@ -5,6 +5,16 @@ public enum SpaceTime { Future, Past, now }
 
 public class PlayerState : MonoBehaviour
 {
+    public static bool oneone = false;
+    public static bool onetwo = false;
+    public static bool passFirst = false;
+    public static bool twoone = false;
+    public static bool twotwo = false;
+    public bool winGame = false;
+    private GameObject win;
+
+    public static PlayerState Instance;
+    GameObject obj;
     Image spaceTime;
     private SpaceTime _space;
     public SpaceTime space
@@ -30,12 +40,22 @@ public class PlayerState : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         spaceTime = GameObject.Find("Canvas/SpaceTime").GetComponent<Image>();
+        win = GameObject.Find("Canvas/WinGame");
+        win.SetActive(false);
 
         space = SpaceTime.now;
     }
     private void Update()
     {
+        if (oneone && onetwo)
+            passFirst = true;
+        if (twoone && twotwo)
+            winGame = true;
+        if (winGame)
+            win.SetActive(true);
+
         ChangeSpaceTime();
     }
 
@@ -55,5 +75,9 @@ public class PlayerState : MonoBehaviour
             else if (space == SpaceTime.Past)
                 space = SpaceTime.now;
         }
+    }
+    public void ChangeObj(GameObject _obj)
+    {
+        obj = _obj;
     }
 }

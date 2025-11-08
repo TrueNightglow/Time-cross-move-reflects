@@ -17,7 +17,7 @@ public class CameraCentralRole : MonoBehaviour
 
     void Update()
     {
-        UpdateCameraPosition();
+        //UpdateCameraPosition();
         if (!Cursor.visible)
         {
             UpdateRotation();
